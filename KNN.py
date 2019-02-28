@@ -21,7 +21,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.2, rando
 
 
 
-knn = KNeighborsClassifier(n_neighbors = 5)
+knn = KNeighborsClassifier(n_neighbors = 3)
 knn.fit(X_train, y_train)
 y_pred = knn.predict(X_test)
 print(metrics.accuracy_score(y_test, y_pred))
@@ -43,7 +43,7 @@ print(metrics.accuracy_score(y_test, y_pred))
 
 
 accuracy = accuracy_score(y_test, y_pred)*100
-k_list = list(range(1,50,2))
+k_list = list(range(1,8,1))
 cv_scores = []
 
 for k in k_list:
